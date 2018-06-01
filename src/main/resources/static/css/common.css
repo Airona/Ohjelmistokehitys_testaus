@@ -1,0 +1,210 @@
+/*general*/
+*{margin:0px;padding:0px;}
+.clear {clear:both;}
+/*fonts*/
+a {text-decoration:none;}
+a {
+  color:#FF2397 !important;
+  -o-transition:color .2s ease-out;
+  -ms-transition:color .2s ease-out;
+  -moz-transition:color .2s ease-out;
+  -webkit-transition:color .2s ease-out;
+  transition:color .2s ease-out;
+}
+a:hover {
+	color:#AF58C4 !important;
+}
+
+.securityForm {
+	text-align:center;
+}
+
+/*styling*/
+header {
+	width:100%;
+	height:90px;
+	border-bottom:1px solid #111;
+}
+#logo {
+	margin:15px 0 0 15px;
+	float:left;
+	height:64px; width:100px;
+	background-image:url('../img/logo.png');
+}
+nav ul {
+	list-style-type:none;
+}
+nav ul li {
+	margin-right:1.2em;
+	display:inline-block;
+}
+nav ul li a{
+	display:block;
+	margin-top:0.3em;
+	padding:0.1em 0 0.1em 0;
+	cursor:pointer;
+}
+nav ul li:first-child {margin-left:0; border-left:none;}
+nav ul li:last-child {margin-right:0;}
+#navControl{text-align:right;margin-right:2em;}
+#navMain{text-align:center;}
+
+main {
+	margin-left:2em;
+	margin-right:2em;
+}
+
+footer {
+	margin-top:3em;
+	border-top:1px solid #111;
+}
+
+.form-control {
+	width:100% !important;
+}
+
+@media screen and (max-width: 360px) {
+	header {height:auto;}
+	nav ul li {
+		display:block;
+		border-left:none;
+	}
+}
+
+
+
+/*table and form*/
+tbody tr {
+    background: linear-gradient(white, #d5d5d5);
+}
+.imgPreview img {
+	max-width: 100%;
+	max-height: 200px;
+}
+.table{ /*additional styling on top of bootstrap*/
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.formDiv {float:left; width:200px}
+.tableDivWithForm {margin-left:200px; width:auto;position:relative;}
+
+@media screen and (max-width: 600px) {
+	.formDiv {float:none;}
+}
+
+
+/*modal styling*/
+ /* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modalView {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 2em; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    text-align: center;
+}
+
+/* Modal Content (Image) */
+.modalView-content {
+    margin: auto;
+    display: block;
+    max-width: calc(100% - 2em);
+	max-height: calc(100% - 3em);
+}
+.modalForm {
+    background-color: white;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 5px;
+    padding-top: 1em;
+}
+	.modalForm .btn {margin:1em;}
+	.modalForm .form-control {
+		width: 80% !important;
+		margin: auto;
+		margin-top: 0.5em;
+	}
+	
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modalView-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.closeBt {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closeBt:hover,
+.closeBt:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tableLoading {
+    position: absolute;
+    background-color: rgba(10,10,10,0.3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.spinner{
+	background-image: url('../img/spinner.gif');
+	padding: 2em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: calc(50% - 2em);
+	left: calc(50% - 2em);
+	border-radius: 2em;
+}

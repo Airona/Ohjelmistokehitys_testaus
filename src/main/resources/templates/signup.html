@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<title>Spring Security</title>
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+		th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<div style="text-align:center;">
+		<h1>Sign-up</h1>
+		<form action="#" th:action="@{/signup}" th:object="${user}" method="post" enctype="utf8">
+			<p th:if="${nameTaken} != null" th:text="${nameTaken}"></p>
+			<div>
+				<label>Username:
+					<input th:field="*{username}" class="form-control" />
+				</label>
+				<p th:each="error: ${#fields.errors('username')}" th:text="${error}">Validation	error</p>
+			</div>
+			<div>
+				<label>Email:
+					<input type="email" th:field="*{email}" class="form-control" />
+				</label>
+				<p th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation error</p>
+			</div>
+			<div>
+				<label>Password:
+					<input type="password" th:field="*{password}" class="form-control" />
+				</label>
+				<p th:each="error : ${#fields.errors('password')}" th:text="${error}">Validation error</p>
+			</div>
+			<div>
+				<label>Password again:
+					<input type="password" th:field="*{matchingPassword}" class="form-control" />
+				</label>
+			</div>
+			<input class="btn btn-success" type="submit" value="Register" />
+		</form>
+		<br />
+		<div>
+			<a th:href="@{/login.html}">Login</a>
+		</div>
+		<br />
+		<div>
+			<a th:href="@{/}" class="btn btn-info">Go Back</a>
+		</div>
+	</div>
+</body>
+</html>
